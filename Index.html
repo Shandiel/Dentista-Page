@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dra. Karyna Fernandes — Odontologia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF6; --bg-alt:#F1EEE5; --line:#DEDACD;
+    --ink:#1C2420; --muted:#5F6E64; --sage:#6E8770;
+    box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:inherit; margin:0; padding:0;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:'Work Sans',-apple-system,sans-serif; font-size:16px; line-height:1.65;
+    overflow-x:hidden;
+  }
+  .display{font-family:'Newsreader',Georgia,serif;}
+  .wrap{max-width:700px; margin:0 auto; padding:0 28px;}
+  header{
+    padding:22px 28px; display:flex; align-items:center; justify-content:space-between;
+    border-bottom:1px solid var(--line);
+  }
+  .mark{font-family:'Newsreader',serif; font-size:21px; font-style:italic;}
+  .mark em{font-style:normal; color:var(--sage);}
+  header a{
+    color:var(--ink); text-decoration:none; font-size:13.5px; border:1px solid var(--line);
+    padding:9px 16px; border-radius:2px; transition:border-color .2s;
+  }
+  header a:hover{border-color:var(--sage);}
+
+  .hero{padding:60px 0 40px; display:flex; gap:36px; align-items:center; flex-wrap:wrap-reverse;}
+  .hero-text{flex:1 1 320px;}
+  .hero-art{flex:0 0 220px; max-width:220px; margin-left:auto;}
+  .hero-art svg{width:100%; height:auto;}
+  .kicker{color:var(--sage); font-size:13.5px; letter-spacing:.02em; margin-bottom:16px;}
+  h1{
+    font-size:clamp(32px,7vw,48px); font-weight:500; line-height:1.14;
+    letter-spacing:-.005em; max-width:12ch;
+  }
+  .hero p{color:var(--muted); font-size:16.5px; max-width:38ch; margin-top:22px;}
+  .cta-row{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
+  .btn{display:inline-block; padding:14px 26px; border-radius:2px; font-size:14.5px; text-decoration:none;}
+  .btn-primary{background:var(--sage); color:#FAFAF6; font-weight:500;}
+  .btn-ghost{border:1px solid var(--line); color:var(--ink);}
+
+  section{padding:52px 0; border-top:1px solid var(--line);}
+  h2{font-size:25px; font-weight:500; letter-spacing:-.005em; margin-bottom:14px;}
+  .lead{color:var(--muted); max-width:40ch; margin-bottom:32px; font-size:15.5px;}
+
+  .service{display:flex; align-items:center; padding:16px 0; border-bottom:1px solid var(--line); gap:16px;}
+  .service:last-child{border-bottom:none;}
+  .service-icon{flex:0 0 40px; width:40px; height:40px; border-radius:50%; background:var(--bg-alt); display:flex; align-items:center; justify-content:center;}
+  .service-icon svg{width:18px; height:18px;}
+  .service-name{font-family:'Newsreader',serif; font-size:19px;}
+  .service-desc{color:var(--muted); font-size:13.5px; margin-top:3px; max-width:34ch;}
+
+  .credentials{display:flex; gap:28px; flex-wrap:wrap; color:var(--muted); font-size:13.5px;}
+  .credentials div{border-left:1px solid var(--sage); padding-left:12px;}
+  .credentials b{color:var(--ink); display:block; font-size:15px; margin-bottom:2px;}
+
+  .quote{font-family:'Newsreader',serif; font-size:21px; font-style:italic; max-width:32ch; line-height:1.5;}
+  .quote-by{color:var(--muted); font-size:13.5px; margin-top:14px;}
+
+  .gallery-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+  .before-after{display:flex; flex-direction:column; gap:8px;}
+  .placeholder-img{
+    aspect-ratio:4/5; border:1.5px dashed var(--line); border-radius:2px;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    color:var(--muted); font-size:12px; padding:10px; background:var(--bg-alt);
+  }
+  .before-after span{font-size:12px; color:var(--muted); letter-spacing:.02em;}
+
+  .testimonials-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .testimonial-card p{font-family:'Newsreader',serif; font-style:italic; font-size:16px; line-height:1.5;}
+  .testimonial-card .quote-by{margin-top:10px; font-size:12.5px;}
+
+  @media (max-width:560px){
+    .testimonials-grid{grid-template-columns:1fr;}
+  }
+
+  .cta-final{padding:60px 0 68px;}
+  .cta-final h2{font-size:30px; max-width:14ch;}
+  .cta-final p{color:var(--muted); max-width:34ch; margin:14px 0 26px;}
+
+  footer{border-top:1px solid var(--line); padding:22px 28px; display:flex; justify-content:space-between; color:var(--muted); font-size:12.5px; flex-wrap:wrap; gap:8px;}
+
+  @media (max-width:520px){
+    .service{flex-direction:column; align-items:flex-start; gap:3px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="mark">Dra. Karyna <em>Fernandes</em></div>
+  <a href="https://instagram.com/drakarynafernandes" target="_blank">Agendar pelo direct</a>
+</header>
+
+<div class="wrap">
+  <section class="hero" style="border-top:none;">
+    <div class="hero-text">
+      <div class="kicker">Cirurgiã-dentista · Ortodontista · Araguaína, TO</div>
+      <h1 class="display">Um sorriso que combina com você.</h1>
+      <p>Ortodontia e odontologia geral com plano de tratamento pensado pra sua rotina — sem enrolação, sem procedimento que você não precisa.</p>
+      <div class="cta-row">
+        <a href="https://instagram.com/drakarynafernandes" target="_blank" class="btn btn-primary">Agendar avaliação</a>
+        <a href="#tratamentos" class="btn btn-ghost">Ver tratamentos</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 30C60 30 40 55 40 90c0 35 15 70 22 78 6 7 12-8 14-25 1-10 7-17 24-17s23 7 24 17c2 17 8 32 14 25 7-8 22-43 22-78 0-35-20-60-60-60Z" stroke="#6E8770" stroke-width="2.5"/>
+        <path d="M75 75c5-8 12-12 25-12s20 4 25 12" stroke="#DEDACD" stroke-width="2"/>
+        <circle cx="70" cy="95" r="4" fill="#6E8770"/>
+        <circle cx="130" cy="95" r="4" fill="#6E8770"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="tratamentos">
+    <h2 class="display">Tratamentos</h2>
+    <p class="lead">Avaliação inicial pra entender o que faz sentido pro seu caso.</p>
+    <div class="service">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C7 3 5 6 5 10c0 4 2 9 3 10 1 1 1.5-2 2-5 .3-2 1-3 2-3s1.7 1 2 3c.5 3 1 6 2 5 1-1 3-6 3-10 0-4-2-7-7-7Z" stroke="#6E8770" stroke-width="1.6"/></svg></div>
+      <div><div class="service-name">Ortodontia</div><div class="service-desc">Aparelho fixo ou alinhador, com acompanhamento próximo.</div></div>
+    </div>
+    <div class="service">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="#6E8770" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="#6E8770" stroke-width="1.6"/></svg></div>
+      <div><div class="service-name">Clareamento dental</div><div class="service-desc">Protocolo seguro, sem sensibilidade exagerada.</div></div>
+    </div>
+    <div class="service">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12c0-4 3-7 8-7s8 3 8 7-3 7-8 7-8-3-8-7Z" stroke="#6E8770" stroke-width="1.6"/><path d="M9 12h6" stroke="#6E8770" stroke-width="1.6"/></svg></div>
+      <div><div class="service-name">Restaurações estéticas</div><div class="service-desc">Resina na cor certa do seu dente, sem parecer postiço.</div></div>
+    </div>
+    <div class="service">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#6E8770" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div><div class="service-name">Avaliação geral</div><div class="service-desc">Check-up completo pra mapear o que precisa de atenção.</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="credentials">
+      <div><b>Araguaína, TO</b>Atendimento no consultório local</div>
+      <div><b>Cirurgiã-Dentista</b>Clínica geral e ortodontia</div>
+      <div><b>Agenda por direct</b>Resposta rápida no Instagram</div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <h2 class="display">Antes e depois</h2>
+    <p class="lead">Espaço reservado — aqui entram fotos reais de pacientes (com autorização).</p>
+    <div class="gallery-grid">
+      <div class="before-after">
+        <div class="placeholder-img">Foto — Antes</div>
+        <span>Caso 1 · Antes</span>
+      </div>
+      <div class="before-after">
+        <div class="placeholder-img">Foto — Depois</div>
+        <span>Caso 1 · Depois</span>
+      </div>
+      <div class="before-after">
+        <div class="placeholder-img">Foto — Antes</div>
+        <span>Caso 2 · Antes</span>
+      </div>
+      <div class="before-after">
+        <div class="placeholder-img">Foto — Depois</div>
+        <span>Caso 2 · Depois</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="display">O que dizem os pacientes</h2>
+    <p class="lead">Espaço reservado — aqui entram depoimentos reais.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="quote">"Fiz o tratamento com ela e o que mais gostei foi de nunca sair da consulta com dúvida sobre o próximo passo."</p>
+        <p class="quote-by">— Paciente atendida em Araguaína</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="quote">"Depoimento real do paciente entra aqui."</p>
+        <p class="quote-by">— Nome do paciente</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="quote">"Depoimento real do paciente entra aqui."</p>
+        <p class="quote-by">— Nome do paciente</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final" style="border-top:1px solid var(--line);">
+    <h2 class="display">Vamos cuidar do seu sorriso?</h2>
+    <p>Manda uma mensagem no direct e a gente marca sua avaliação.</p>
+    <a href="https://instagram.com/drakarynafernandes" target="_blank" class="btn btn-primary">Chamar no Instagram</a>
+  </section>
+</div>
+
+<footer>
+  <div>Dra. Karyna Fernandes — Odontologia</div>
+  <div>Araguaína · TO</div>
+</footer>
+
+</body>
+</html>
